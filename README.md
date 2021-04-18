@@ -67,7 +67,7 @@ npm install
 npm start
 ```
 
-The client should then be running on the default port _(localhost://3000)_
+The client should then be running on the default port _(localhost://3003)_
 
 ## Built With
 
