@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <video src="assets/rocknpedia.mp4" style="width: 100%" autoplay loop>
+            </video>
+        </div>
+    </div>
+</div>
+
+
+<div class="container text-center mt-5">
+    <div class="row justify-content-center">
+        <div *ngFor="let band of bands" class="card col-12 col-md-3 m-1" style="width: 18rem;">
+            <div class="img mt-2">
+                <img [src]="url + 'avatars/' + band.band_image" class="card-img-top" alt="..." style="width: 100%">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ band.name }}</h5>
+                <p class="card-text">{{band.foundation_year}}</p>
+                <a [routerLink]="['/band-detail/', band.band_id]" class="button">Detail</a>
+            </div>
+        </div>
+    </div>
+</div>

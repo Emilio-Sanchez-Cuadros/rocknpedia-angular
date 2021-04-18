@@ -1,0 +1,25 @@
+.card {
+    position:relative;
+    height: 400px
+}
+
+.img img{
+    max-width: 60%;
+}
+
+.card-body {
+    position:absolute;
+    width: 90%;
+    max-height: 50%;
+
+    /* posicion vertical */
+    bottom:0px;
+
+    /* centrado horizontal
+    left:50%;
+    margin-left:-25px; */
+}
+
+.button {
+    background-color: #050505;
+}

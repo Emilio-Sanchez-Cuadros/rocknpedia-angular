@@ -1,0 +1,47 @@
+<div class="container text-center mt-5">
+    <div class="row justify-content-center">
+        <div class="img mb-5">
+            <img [src]="url + 'avatars/' + album_image" class="card-img-top" style="max-width: 250px; border: 4px solid #fff" alt="...">
+            <h2 class="card-title">{{ album_name }}</h2>
+            <p class="card-text">{{record_label}}</p>
+        </div>
+        
+        <div *ngFor="let review of reviews" class="col-12" style="width: 90%;">
+            <div *ngIf="review.review" class="review">
+                <img [src]="url + 'avatars/' + review.user_image" class="card-img-top" style="max-width: 200px" alt="...">
+                <h5 class="card-title">{{ review.username }}</h5>
+                <p style="color: rgba(50, 50, 50, 0.75) !important" class="card-text">{{review.review_date | date}}</p>
+                <star-rating [value]="review.rating" checkedcolor="red" uncheckedcolor="black" size="24px"></star-rating>
+                <p style="color: rgba(50, 50, 50, 0.75) !important" class="card-text" [innerHTML]="review.review"></p>
+
+            </div>
+            <h1 *ngIf="review.review == null">No reviews yet</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <button *ngIf="token" type="button" style="width: 200px" class="button" data-toggle="modal" data-target="#exampleModal">
+                Add review
+              </button>
+        </div>
+
+    </div>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Write your review</h5>
+            </div>
+            <div class="modal-body">
+                <star-rating [value]="rating" [totalstars]="totalstars" checkedcolor="red" uncheckedcolor="black" size="24px" readonly="false" (rate)="onRate($event)"></star-rating>
+                <ckeditor [(ngModel)]="model.editorData"
+                [editor]="Editor"></ckeditor>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="button" data-dismiss="modal">Close</button>
+              <button type="button" class="button" (click)="sendReview()">Save changes</button>
+            </div>
+          </div>
+</div>

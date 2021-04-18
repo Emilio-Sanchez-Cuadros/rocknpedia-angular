@@ -70,6 +70,6 @@ The client should then be running on the default port _(localhost://3003)_
 * [JWT](https://jwt.io/) - JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties.
 
 
-## Authors
+## Author
 
 **Emilio Sánchez Cuadros**(https://github.com/Emilio-Sanchez-Cuadros)

@@ -1,0 +1,9 @@
+p {
+    margin-top: unset !important;
+    margin-bottom: unset !important;
+    color: #fff;
+}
+
+ul li a {
+    color: #fff;
+}
